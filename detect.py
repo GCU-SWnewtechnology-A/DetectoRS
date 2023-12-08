@@ -22,31 +22,29 @@ for root, dirs, files in os.walk(data_folder):
                 # 이미지 파일의 경로
                 image_path = os.path.join(image_folder, file_name)
 
-                # 클래스 레이블 (파일명이나 경로에서 추출)
-                label = dir_name  # 예시로 폴더명을 클래스 레이블로 사용
-
-                # 라벨링 정보가 있는 JSON 파일의 경로
+                # 클래스 레이블 및 위치 정보 찾기
                 json_path = os.path.join(json_folder, dir_name + '.json')
-
-                # JSON 파일 로드
                 with open(json_path, 'r') as json_file:
                     json_data = json.load(json_file)
 
-                # 클래스 레이블에 해당하는 라벨링 정보 찾기
-                for item in json_data:
-                    if item.get('obj_type') == label:
-                        # 위치 정보
-                        position_x = item['psr']['position']['x']
-                        position_y = item['psr']['position']['y']
+                    for item in json_data:
+                        # 해당 이미지 파일에 대한 정보 찾기
+                        if item.get('obj_id') == file_name.split('.')[0]:
+                            # 위치 정보
+                            position_x = item['psr']['position']['x']
+                            position_y = item['psr']['position']['y']
 
-                        # 데이터셋에 추가
-                        dataset.add_image(image_path, (position_x, position_y), label=label)
+                            # 클래스 레이블
+                            label = item['obj_type']
+
+                            # 데이터셋에 추가
+                            dataset.add_image(image_path, (position_x, position_y), label=label)
 
 # Detecto 모델 학습
 from detecto.core import Model
 
-# 클래스 레이블 설정 (폴더명을 클래스로 사용하는 경우)
-class_labels = os.listdir(data_folder)
+# 클래스 레이블 설정 (고려된 클래스 레이블 사용)
+class_labels = set(item['obj_type'] for item in json_data)
 
 model = Model(class_labels)
 model.fit(dataset, epochs=10, learning_rate=0.001, verbose=True)
