@@ -5,8 +5,8 @@ from detecto.core import Dataset
 # 원본 데이터 폴더 경로
 
 
-data_folder = 'C:\\Users\\user\\Desktop\\swnew\\common\\2212\\Suwon_A\\E\\'
-json_folder = 'C:\\Users\\user\\Desktop\\swnew\\label\\2212\\Suwon_A\\E\\'
+data_folder = 'C:\\Users\\user\\Desktop\\swnew\\common\\Suwon_A\\'
+json_folder = 'C:\\Users\\user\\Desktop\\swnew\\label\\Suwon_A\\'
 
 # Detecto 데이터셋 생성
 dataset = Dataset()
