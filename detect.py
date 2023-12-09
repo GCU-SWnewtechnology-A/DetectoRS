@@ -3,8 +3,10 @@ import json
 from detecto.core import Dataset
 
 # 원본 데이터 폴더 경로
-data_folder = r'C:\Users\DR231017\Desktop\deteto_data\01.원천데이터\2212'
-json_folder = r'C:\Users\DR231017\Desktop\deteto_data\02.라벨링데이터\2212'
+
+
+data_folder = 'C:\\Users\\user\\Desktop\\swnew\\common\\2212\\Suwon_A\\E\\'
+json_folder = 'C:\\Users\\user\\Desktop\\swnew\\label\\2212\\Suwon_A\\E\\'
 
 # Detecto 데이터셋 생성
 dataset = Dataset()
@@ -50,4 +52,4 @@ model = Model(class_labels)
 model.fit(dataset, epochs=10, learning_rate=0.001, verbose=True)
 
 # 훈련된 모델 저장
-model.save('your_trained_model.pth')
+model.save('C:\\Users\\user\\Desktop\\swnew\\swnewDetetoRS.pth')

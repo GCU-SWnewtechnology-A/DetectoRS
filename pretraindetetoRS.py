@@ -1,7 +1,11 @@
 from detecto import core, utils, visualize
+import warnings
+warnings.filterwarnings('ignore')
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
 # 이미지 파일 경로
-image_path = "C:\\Users\\DR231017\\Desktop\\deteto_data\\01.원천데이터\\2212\\L_2212_Suwon_A_E_C1622\\sensor_raw_data\\camera\\front\\L_2212_Suwon_A_E_C1622_0003.jpg"
+image_path = "C:\\Users\\user\\Desktop\\swnew\\common\\2212\\Suwon_A\\E\\L_2212_Suwon_A_E_C1620\\sensor_raw_data\\camera\\front\\L_2212_Suwon_A_E_C1620_0001.jpg"
 
 # Detecto 모델 로드 (미리 훈련되었다고 가정)
 model = core.Model()
@@ -12,28 +16,10 @@ image = utils.read_image(image_path)
 # 객체 감지 수행
 labels, boxes, scores = model.predict(image)
 
-# 결과 시각화
+
 visualize.show_labeled_image(image, boxes, labels)
 
 
-import cv2
-from matplotlib import pyplot as plt
-import os
+### 일단 이 파일에는 모든 common(원천데이터)를 pretrain 모델에 돌려서 결과를 return 하자
 
-image_path = "C:\\Users\\DR231017\\Desktop\\deteto_data\\01.원천데이터\\2212\\L_2212_Suwon_A_E_C1622\\sensor_raw_data\\camera\\front\\L_2212_Suwon_A_E_C1622_0003.jpg"
-
-# 이미지 파일이 존재하는지 확인
-if not os.path.isfile(image_path):
-    print("hello")
-    print("Error: Image file does not exist.")
-else:
-    # 이미지 파일 불러오기
-    image = cv2.imread(image_path)
-
-    # 이미지가 정상적으로 불러와졌는지 확인
-    if image is None:
-        print("Error: Failed to load the image.")
-    else:
-        # 이미지 출력
-        plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-        plt.show()
+## 이후 detectoRS모델을 학습할때 1620 ~ 1687까지 폴더가 있으니 1680까지만 train시키고 나머진 test 후 위에거랑 비교해서 ppt에 넣을 수 있도록 만들면 댈듯?
