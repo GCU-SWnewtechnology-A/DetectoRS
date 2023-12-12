@@ -15,6 +15,7 @@ output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'
 # 폴더 범위 설정
 start_folder = 1620
 end_folder = 1660
+
 for folder_name in range(start_folder, end_folder + 1):
     input_folder = os.path.join(input_folder_base, f'L_2212_Suwon_A_E_C{folder_name}', 'sensor_raw_data', 'camera', 'front')
     output_folder = os.path.join(output_folder_base, f'L_2212_Suwon_A_E_C{folder_name}')
