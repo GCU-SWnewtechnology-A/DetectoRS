@@ -76,7 +76,7 @@ def faster_cnn(input_folder_base, output_folder_base, start_folder, end_folder):
                 cv2.imwrite(result_image_path, img_np)
 
 
-def yolo(input_folder_base, output_folder_base, start_folder, end_folder):
+def yolov(input_folder_base, output_folder_base, start_folder, end_folder):
     model = YOLO("yolov8n.pt")
     model.eval()
     for folder_name in range(start_folder, end_folder + 1):
@@ -103,3 +103,8 @@ if __name__=="__main__":
     output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'
     start_folder = 1620
     end_folder = 1687
+
+
+    detectors(input_folder_base, output_folder_base, start_folder, end_folder)
+    faster_cnn(input_folder_base, output_folder_base, start_folder, end_folder)
+    yolov(input_folder_base, output_folder_base, start_folder, end_folder)
