@@ -8,8 +8,6 @@ from PIL import Image
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 from ultralytics import YOLO
 
-# 입력 폴더와 출력 폴더의 상위 경로 설정
-
 
 def detectors(input_folder_base, output_folder_base, start_folder, end_folder):
     model = core.Model()
