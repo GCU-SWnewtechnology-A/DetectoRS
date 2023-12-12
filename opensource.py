@@ -9,11 +9,6 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 from ultralytics import YOLO
 
 # 입력 폴더와 출력 폴더의 상위 경로 설정
-input_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\common\\Suwon_A'
-output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'
-start_folder = 1620
-end_folder = 1687
-
 
 
 def detectors(input_folder_base, output_folder_base, start_folder, end_folder):
@@ -101,3 +96,10 @@ def yolo(input_folder_base, output_folder_base, start_folder, end_folder):
 
                 results.save(save_dir=result_folder)
 
+
+if __name__=="__main__":
+    ## path 폴더와 폴더의 범위만 지정
+    input_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\common\\Suwon_A'
+    output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'
+    start_folder = 1620
+    end_folder = 1687
