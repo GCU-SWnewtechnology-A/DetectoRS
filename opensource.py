@@ -70,9 +70,7 @@ def process_images(input_folder_base, output_folder_base, start_folder, end_fold
                     print("---- detectoRS using ----")
                     detector_model = core.Model()
                     labels, boxes, scores = detector_model.predict(image)
-
-                    # Check if the image is already in RGB format
-                    if image.shape[-1] == 3:  # Image is in BGR format
+                    if image.shape[-1] == 3:  
                         detector_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                     else:
                         detector_image = image
