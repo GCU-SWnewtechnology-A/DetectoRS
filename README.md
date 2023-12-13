@@ -7,7 +7,7 @@ https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDat
 DetectoRS: Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolution paper - [https://arxiv.org/abs/2006.02334]  
 github - [https://github.com/joe-siyuan-qiao/DetectoRS]  
 
-
+![output](https://github.com/GCU-SWnewtechnology-A/DetectoRS/assets/97012067/ac3a40fa-fcc6-4f89-a5b5-00106c826066)
 
 Code Execution Manual
 if __name__ == "__main__": Part of the open source.py folder.
