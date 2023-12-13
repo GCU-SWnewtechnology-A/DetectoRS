@@ -123,11 +123,16 @@ def process_images(input_folder_base, output_folder_base, start_folder, end_fold
                 visualize_results(detector_image, faster_cnn_image, yolov_image)
 
 if __name__ == "__main__":
-    input_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\common\\Suwon_A'  # 이미지가 들어있는 폴더
-    output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'  # 모델 return 폴더
-    start_folder = 1620  # 이미지 범위
+    
+    input_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\common\\Suwon_A'   #image Data input folder path
+    output_folder_base = r'C:\\Users\\user\\Desktop\\swnew\\return'           #Folder path to return to after image detection in the model 
+    
+    start_folder = 1620                                                       #Image range settings
     end_folder = 1687
-    models = ['detectors', 'faster_cnn', 'yolov']
+    
+    models = ['detectors', 'faster_cnn', 'yolov']                             #Set model name
+
+
 
     process_images(input_folder_base, output_folder_base, start_folder, end_folder, models)
 
