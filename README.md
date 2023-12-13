@@ -4,11 +4,18 @@ This is a repository related to SW new technology special topics and team projec
 ##Data - Dynamic object recognition data based on intelligent infrastructure sensors
 https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71609
 
-
-ych - DetectoRS: Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolution
+DetectoRS: Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolution
 paper - [https://arxiv.org/abs/2006.02334]
 github - [https://github.com/joe-siyuan-qiao/DetectoRS]
 
-ljh - DeepFusionMOT: A 3D Multi-Object Tracking Framework Based on Camera-LiDAR Fusion with Deep Association
-paper - [https://arxiv.org/pdf/2202.12100v2.pdf]
-github - [https://github.com/wangxiyang2022/DeepFusionMOT]
+
+Code Execution Manual
+if __name__ == "__main__": Part of the open source.py folder.
+
+Image data input folder path
+Folder path to return to after detecting images in the model
+Set image range
+Model name setting
+
+After setting a total of 4 variables, set the path and specify the folder where images will be detected.
+Please enter the model when comparing with DetectoRS as well as YOLO and Faster_R_CNN.
